@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joshbgold.PirateSpanish">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name="com.joshbgold.PirateSpanish.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".quizActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".questsActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.joshbgold.PirateSpanish.quizActivity" />
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.joshbgold.PirateSpanish.SettingsActivity" />
+        </activity>
+
+        <activity
+            android:name=".WordPracticeActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.joshbgold.PirateSpanish.WordPracticeActivity" />
+        </activity>
+
+        <activity
+            android:name=".CaptainActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".quizActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.joshbgold.PirateSpanish.CaptainActivity" />
+        </activity>
+
+        <activity
+            android:name=".FAQActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.joshbgold.PirateSpanish.FAQActivity" />
+        </activity>
+
+        <activity
+            android:name=".questsActivity"
+            android:label="Pirate Spanish"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".questsActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
