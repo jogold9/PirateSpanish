@@ -60,18 +60,18 @@ public class MainActivity extends ActionBarActivity {
         };
 
         //Exit button
-         View.OnClickListener walkThePlank = new View.OnClickListener() {
-             @Override
-             public void onClick (View view) {
-                 finish();
-             }
-         };
+        View.OnClickListener walkThePlank = new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                finish();
+            }
+        };
 
-         practiceButton.setOnClickListener(practiceWords);
-         quizButton.setOnClickListener(beOffToBattle);
-         helpButton.setOnClickListener(help);
-         faqButton.setOnClickListener(faq);
-         exitButton.setOnClickListener(walkThePlank);
+        practiceButton.setOnClickListener(practiceWords);
+        quizButton.setOnClickListener(beOffToBattle);
+        helpButton.setOnClickListener(help);
+        faqButton.setOnClickListener(faq);
+        exitButton.setOnClickListener(walkThePlank);
     }
 
     //go to the settings page
@@ -111,3 +111,4 @@ public class MainActivity extends ActionBarActivity {
         return data;
     }
 }
+

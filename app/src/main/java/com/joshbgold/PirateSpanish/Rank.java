@@ -3,7 +3,6 @@ package com.joshbgold.PirateSpanish;
 /**
  * Created by JoshG on 3/4/2015.
  */
-
 public class Rank {
 
     //private int rank = 0;

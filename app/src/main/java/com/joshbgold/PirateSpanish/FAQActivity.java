@@ -36,3 +36,4 @@ public class FAQActivity extends MainActivity {
     }
 
 }
+

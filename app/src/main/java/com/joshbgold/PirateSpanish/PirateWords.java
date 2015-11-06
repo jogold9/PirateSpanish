@@ -1,5 +1,8 @@
 package com.joshbgold.PirateSpanish;
 
+/**
+ * Created by JoshG on 11/6/2015.
+ */
 public class PirateWords {
     //Member variables (properties about the object)
     private int currentNumber = 0;
@@ -256,8 +259,8 @@ public class PirateWords {
 
     //returns English definition, used for quizzes
     public String getPirateAnswer(int rank) {
-            String pirateAnswer = mPirateAnswer[currentNumber + (rank * 10)];  //grabs the appropriate word list for their rank
-            return pirateAnswer;
+        String pirateAnswer = mPirateAnswer[currentNumber + (rank * 10)];  //grabs the appropriate word list for their rank
+        return pirateAnswer;
     }
 
     //goes back to previous word, unless you are on the first word already
@@ -273,14 +276,10 @@ public class PirateWords {
                 return previousWord;
             }
             else if (currentNumber == 0){  //we are at the first word, "pirata"
-              previousWord = mPirateWord[currentNumber];
-              return previousWord;
+                previousWord = mPirateWord[currentNumber];
+                return previousWord;
             }
-         }
+        }
         return emptyAnswer;  //shows nothing when we haven't even displayed the first word
     }
-
-
-
 }
-

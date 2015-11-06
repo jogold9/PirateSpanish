@@ -118,4 +118,3 @@ public class WordPracticeActivity extends MainActivity {
         return data;
     }
 }
-

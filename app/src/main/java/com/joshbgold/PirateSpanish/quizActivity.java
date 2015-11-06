@@ -68,21 +68,21 @@ public class quizActivity extends MainActivity {
         //rank = 8;
         //*********For testing. Need to comment out this line later!!*************
 
-    //get a word button
-    View.OnClickListener getQuizWord = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            getPirateQuizWord();
-        }
-    };
+        //get a word button
+        View.OnClickListener getQuizWord = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPirateQuizWord();
+            }
+        };
 
-    //check Word button
-    View.OnClickListener checkWord = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            checkAnswer();
-        }
-    };
+        //check Word button
+        View.OnClickListener checkWord = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkAnswer();
+            }
+        };
 
         //Exit button
         View.OnClickListener walkThePlank = new View.OnClickListener() {
@@ -96,9 +96,9 @@ public class quizActivity extends MainActivity {
             }
         };
 
-    getQuizWordButton.setOnClickListener(getQuizWord);
-    checkButton.setOnClickListener(checkWord);
-    exitButton.setOnClickListener(walkThePlank);
+        getQuizWordButton.setOnClickListener(getQuizWord);
+        checkButton.setOnClickListener(checkWord);
+        exitButton.setOnClickListener(walkThePlank);
 
     }
 
@@ -110,17 +110,17 @@ public class quizActivity extends MainActivity {
         }
 
         if ((quizWordCount == 0)|| (quizWordCount <= 9 && mAnswered)) {  //mAnswered makes sure user cannot skip words
-                    String fact = mPirateWords.getPirateWord(rank); //Update the screen with the Spanish word
-                    mTextView.setText(fact);
-                    mAnswer.setHint("Type ye answer");
-                    quizWordCount++;
-                    isNewWord = true;
-                    mAnswered = false;
+            String fact = mPirateWords.getPirateWord(rank); //Update the screen with the Spanish word
+            mTextView.setText(fact);
+            mAnswer.setHint("Type ye answer");
+            quizWordCount++;
+            isNewWord = true;
+            mAnswered = false;
 
         }
 
         else if (quizWordCount > 9 && quizOver == false) {
-              quizOver();
+            quizOver();
         }
     }
 
@@ -152,7 +152,7 @@ public class quizActivity extends MainActivity {
 
                 } else {
                     Toast.makeText(quizActivity.this, "Sorry, " + mRank.getRankDescription(rank) +
-                             ", th' word be \"" + correctAnswer + "\"", Toast.LENGTH_SHORT).show();
+                            ", th' word be \"" + correctAnswer + "\"", Toast.LENGTH_SHORT).show();
                     mProgress.setText("Progress: " + quizWordCount * 10 + " %");
                     mScore.setText("Score: " + score + " out of "  + quizWordCount);
                     mAnswered = true;
@@ -189,6 +189,9 @@ public class quizActivity extends MainActivity {
     }
 
     void quizOver(){  //this method promotes user & awards coins if user passes quiz
+
+        questsActivity quests = new questsActivity();
+
         if (score >= 8) {
 
             if (rank != 9){  //If user is not a captain, promote them.
@@ -199,12 +202,12 @@ public class quizActivity extends MainActivity {
             mAnswer.setHint("");
             mAnswer.setText("");
             mTextView.setText("");
-            String success = "Ye succeeded on yer voyage.  Your new rank is "
-                    +  mRank.getRankDescription(rank) + ".";
-            String bonus = " An' ten bonus pieces of eight fer a perfect score.";
+
+            String success = quests.getVoyageSuccess(rank - 1) +  " Yer new rank is " +  mRank.getRankDescription(rank) + ".";
+            String perfect = " An' ten bonus pieces of eight fer a perfect score.";
 
             if (score == 10) {
-                mEndingText.setText((success + bonus));
+                mEndingText.setText(success + perfect);
                 piecesOfEight = piecesOfEight + 10;
                 mPiecesOfEight.setText("Pieces of Eight: " + piecesOfEight);
             }
@@ -215,9 +218,7 @@ public class quizActivity extends MainActivity {
             quizOver = true;
         }
         else {
-            //later this fact will be from a String array, and based on rank
-            String loss = "Ye did not succeed on yer voyage. You remain at the rank of "
-                    + mRank.getRankDescription(rank) + ".";
+            String loss = quests.getVoyageFailure(rank) + " Ye remain at the rank of " + mRank.getRankDescription(rank) + ".";
             mAnswer.setHint("");
             mAnswer.setText("");
             mTextView.setText("");

@@ -1,6 +1,5 @@
 package com.joshbgold.PirateSpanish;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -52,3 +51,4 @@ public class SettingsActivity extends MainActivity {
         editor.commit();
     }
 }
+
